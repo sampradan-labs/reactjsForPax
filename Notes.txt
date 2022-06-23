@@ -99,7 +99,13 @@ reportWebVitals();
 11. Run your app
 	>npm start
 
+======================================================================
+Using Props & State
+Props => Used for communication. Acts as messenger in the DOM hierarchy. This is read-only.
 
+state => Keeps track of changes in a component instance. States are read-and-write kind of objects. Any changeable aspect for a component should be added to state object.
+
+events => Trigger that needs to be handled in a component or in DOM hierarchy
 
 
 
