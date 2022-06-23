@@ -1,1 +1,7 @@
-
+======================================================================
+LAB
+Tweak the sticky notes app, to communicate the a server api
+Server API Name: https://jsonplaceholder.typicode.com/posts
+Each post returned will become a sticky note.
+Add css styles and get creative!
+======================================================================
