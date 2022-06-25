@@ -149,7 +149,43 @@ Each post returned will become a sticky note.
 Add css styles and get creative!
 ======================================================================
 
+Working with JWT Tokens on React App
+PART I
+1. Use the signin component to make a post request to the server 
+2. The server returns a token
+3. In the signin component, this token is stored in localstorage
+	LocalStorage.setItem(yourtoken)
 
+PART II
+1. For future requests to the same server, verify if the json token is available in local storage
+   If yes, then load the component. Optionally add it to the header of the request.
+
+PART III
+1.Create a guarded Route component. This component will be created as a higher order component.
+A Higher order component is a component that takes a component as input (through props) and returns a component back.
+
+2. In the case of guarded route, the higher order component will take a component, verify if the jwt token in the local storage is available, then decide upon whether the componen should be rendered or a different component to be loaded.
+======================================
+Certain practices for Server side communication when it comes to rendering large amounts of data.
+
+1. Strategize the view model on the server side in such a way that the json data sent is flat in hierarchy or atleast does not have deep hierarchy.
+
+LOAD IN BATCHES
+1. On the react app side, load such a data into the state object in batches.
+
+2. To ensure this, used the disconnected db architecture strategy which means fill datasets with first 'x' number of data, then on-request get the next 'x' number of data. 
+3. This can be done on the front-end using the pagination technique. This ensures that the db connection is not continuously open, and is opened only when the need arises.
+
+INFINITE SCROLL
+1. Infinite scrolling technique will load the data once the user scrolls beyond the vertical height of the browser window. There are several packages available in react to facilitate infinite scrolling.
+
+2. At the backend, it is advisable to use the connected architecture technique. Here The db connection must be kept open and a streaming datastructure should be used such as a DataReader. It will stream the data in batches and can be loaded into the state object as the user scrolls the screen vertically.
+------------------------------------------------------------
+For further reading on React Js, please refer to the link below.
+https://riptutorial.com/reactjs/awesome-learning/book
+https://riptutorial.com/reactjs/awesome-learning/tutorial
+
+React from scratch: https://riptutorial.com/reactjs
 
 
 
